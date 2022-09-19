@@ -35,9 +35,9 @@ if(isset($_GET["insertar"])){
     $nombre=$data->nombre;
     $descripcion=$data->descripcion;
     $precio=$data->precio;
-        if(($descriction!="")&&($nombre!="")&&($precio!="")){
+        if(($descripcion!="")&&($nombre!="")&&($precio!="")){
             
-    $sqlProductos = mysqli_query($conexionBD,"INSERT INTO productos(nombre,descripcion,precio) VALUES('$nombre','$descrpcion','$precio) ");
+    $sqlProductos = mysqli_query($conexionBD,"INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`) VALUES (NULL, '$nombre', '$descripcion', '$precio') ");
     echo json_encode(["success"=>1]);
         }
     exit();
@@ -49,8 +49,8 @@ if(isset($_GET["actualizar"])){
 
     $id=(isset($data->id))?$data->id:$_GET["actualizar"];
     $nombre=$data->nombre;
-    $descripcio=$data->descripcion;
-    $precio=$data->$precio;
+    $descripcion=$data->descripcion;
+    $precio=$data->precio;
     
     $sqlProductos = mysqli_query($conexionBD,"UPDATE productos SET nombre='$nombre',descripcion='$descripcion',precio='$precio' WHERE id='$id'");
     echo json_encode(["success"=>1]);
@@ -64,13 +64,7 @@ if(mysqli_num_rows($sqlProductos) > 0){
 }
 else{ echo json_encode([["success"=>0]]); }
 
-// Consulta todos los registros de la tabla de categias
-$sqlCat = mysqli_query($conexionBD,"SELECT * FROM categoria");
-if(mysqli_num_rows($sqlCat) > 0){
-    $cat = mysqli_fetch_all($sqlCat,MYSQLI_ASSOC);
-    echo json_encode($cat);
-}
-else{ echo json_encode([["success"=>0]]); }
+
 
 
 ?>
