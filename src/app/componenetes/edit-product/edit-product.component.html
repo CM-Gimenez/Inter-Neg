@@ -1,0 +1,43 @@
+<div class="container-fluid text-center">
+  <div class="container text-center">
+    <h3>Editar Producto</h3>
+  </div>
+<form [formGroup]="formEdit" (ngSubmit)="editar()">
+    <div class="container text-center">
+        
+        <div class="form-floating mb-3">
+            <div>
+              <input
+              type="text"
+              class="form-control" 
+              formControlName="nombre"
+              name="nombre"  
+              id="nombre" 
+              placeholder="">
+            <label for="floatingLabel">Nombre</label>
+            </div>
+            <div>
+              <input
+              type="text"
+              class="form-control" 
+              formControlName="descripcion"
+              name="descripcion"  
+              id="descripcion" 
+              placeholder="">
+            <label for="floatingLabel">Descripcion</label>
+            </div>
+            <div>
+              <input
+              type="number"
+              class="form-control"
+              formControlName="precio" 
+              name="precio"  
+              id="prrecio" 
+              placeholder="">
+            <label for="floatingLabel">Precio</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </div>
+</form>
+</div>

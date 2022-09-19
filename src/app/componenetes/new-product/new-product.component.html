@@ -1,0 +1,48 @@
+<div class="container-fluid text-center">
+  <h3>Agregar nuevo producto</h3>
+</div>
+<form [formGroup]="formNew" (ngSubmit)="enviardatos()">
+  <div class="container text-center">
+    <div class="form-floating mb-3">
+      <div>
+        <input
+          type="text"
+          class="form-control"
+          name="nombre"
+          formControlName="nombre"
+          id="nombre"
+          placeholder=""
+        />
+        <label for="floatingLabel">Nombre</label>
+      </div>
+      <div>
+        <input
+          type="text"
+          class="form-control"
+          name="descripcion"
+          formControlName="descripcion"
+          id="descripcion"
+          placeholder=""
+        />
+        <label for="floatingLabel">Descripcion</label>
+      </div>
+      <div>
+        <input
+          type="number"
+          class="form-control"
+          name="precio"
+          formControlName="precio"
+          id="precio"
+          placeholder=""
+        />
+        <label for="floatingLabel">Precio</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">
+      Agregar nuevo producto
+    </button>
+    <button class="btn btn-primary m-2" routerLink="/inicio">
+      Cancelar
+    </button>
+  </div>
+</form>

@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -16,16 +15,24 @@ import { InicioComponent } from './componenetes/inicio/inicio.component';
 import { ProductoListComponent } from './componenetes/producto-list/producto-list.component';
 import { LoginComponent } from './componenetes/login/login.component';
 import { FooterComponent } from './componenetes/footer/footer.component';
+import { BarraNavComponent } from './componenetes/barra-nav/barra-nav.component';
+
+import { NewProductComponent } from './componenetes/new-product/new-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { EditProductComponent } from './componenetes/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     HeaderComponent,
     InicioComponent,
     ProductoListComponent,
     LoginComponent,
-    FooterComponent
+    FooterComponent,
+    BarraNavComponent,
+    NewProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +43,10 @@ import { FooterComponent } from './componenetes/footer/footer.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

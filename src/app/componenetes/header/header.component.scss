@@ -1,19 +1,5 @@
-div {
-  background-color: lightcoral;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  a {
-    font-size: 25px;
-  }
-  div {
-    div {
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      a {
-        font-size: 18px;
-      }
-    }
-  }
+div{
+    margin: 0;
+    padding: 10px;
+    background-color: pink;
 }
