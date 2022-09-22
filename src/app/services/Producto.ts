@@ -1,8 +1,11 @@
 export class Productos{
-    id!:Number;
-    nombre!:String;
-    descripcion!:String;
-    precio!:Number;
+    id!: number;
+    nombre!: string;
+    descripcion!: string;
+    precio!: number;
+    stock!:number;
+
+    constructor(){}
 
 
 }

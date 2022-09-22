@@ -15,7 +15,7 @@
             <td>{{producto.nombre}}</td>
             <td>{{producto.descripcion}}</td>
             <td>${{producto.precio}}</td>
-            <td>0</td>
+            <td>{{producto.stock}}</td>
             <td> 
                 <button routerLink='/edit/{{producto.id}}' routerLinkActive="router-link-active"  class="btn m-1">Editar</button>
                 <button class="btn m-1" (click)="borrar(producto.id,idControl)">Eliminar</button>
