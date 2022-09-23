@@ -7,27 +7,27 @@ import { Productos } from './Producto';
   providedIn: 'root',
 })
 export class CrudService {
-  API: string = 'http://localhost/coqueta/';
+  API = 'https://coquetaind.herokuapp.com/api';
 
   constructor(private httpclient: HttpClient) {}
 
   AgregarProducto(datosProductos: Productos): Observable<any> {
-    return this.httpclient.post(this.API + '?insertar', datosProductos);
+    return this.httpclient.post(this.API + '/productos', datosProductos);
   }
 
   ObtenerProductos(){
-    return this.httpclient.get(this.API);
+    return this.httpclient.get(this.API+'/productos');
   }
 
   BorrarProducto(id:any): Observable<any> {
-    return this.httpclient.get(this.API + '?borrar='+id);
+    return this.httpclient.get(this.API + '/productos/{id}'+id);
   }
 
   ObtenerProducto(id:any): Observable<any> {
-    return this.httpclient.get(this.API + '?consultar='+id);
+    return this.httpclient.get(this.API + '/productos/'+id);
   }
 
   EditarProducto(id:any, datosProductos:any): Observable<any> {
-    return this.httpclient.post(this.API +'?actualizar='+id, datosProductos);
+    return this.httpclient.post(this.API +'/productos/'+id, datosProductos);
   }
 }

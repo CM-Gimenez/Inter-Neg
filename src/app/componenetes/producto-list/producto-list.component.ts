@@ -7,21 +7,27 @@ import { CrudService } from 'src/app/services/crud.service';
   styleUrls: ['./producto-list.component.scss'],
 })
 export class ProductoListComponent implements OnInit {
-  Productos: any;
+  productos:any;
 
   constructor(private service: CrudService) {}
 
-  ngOnInit(): void {
-    this.service.ObtenerProductos().subscribe((res) => {
-      this.Productos = res;
-    });
+  ngOnInit(){
+   this.gettAll();
   }
+  gettAll(){
+    this.service.ObtenerProductos().subscribe((res:any)=>{
+      console.log(res)
+      this.productos=res.data.data;
+      console.log(this.productos);
+    })
+  }
+
   borrar(id: any, idControl: any) {
     console.log(id);
     console.log(idControl);
     if (window.confirm('Desea Borrar registro')) {
       this.service.BorrarProducto(id).subscribe((res) => {
-        this.Productos.splice(idControl, 1);
+        this.productos.splice(idControl, 1);
       });
     }
   }

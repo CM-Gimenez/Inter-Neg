@@ -3,6 +3,7 @@
     <table class="table">
         <thead>
           <tr>
+            <th>ID</th>
             <th>Nombre</th>
             <th>Descripcion</th>
             <th>Precio</th>
@@ -11,14 +12,15 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let producto of Productos; let idControl=index">
+          <tr *ngFor="let producto of productos; let idControl=index">
+            <td>{{producto.id}}</td>
             <td>{{producto.nombre}}</td>
             <td>{{producto.descripcion}}</td>
             <td>${{producto.precio}}</td>
             <td>{{producto.stock}}</td>
             <td> 
                 <button routerLink='/edit/{{producto.id}}' routerLinkActive="router-link-active"  class="btn m-1">Editar</button>
-                <button class="btn m-1" (click)="borrar(producto.id,idControl)">Eliminar</button>
+                <button class="btn m-1" (click)="borrar(producto.id, idControl)">Eliminar</button>
             </td>
           </tr>
         </tbody>

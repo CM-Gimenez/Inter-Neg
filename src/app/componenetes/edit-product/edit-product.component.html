@@ -2,53 +2,60 @@
   <div class="container text-center">
     <h3>Editar Producto</h3>
   </div>
-<form [formGroup]="formEdit" (ngSubmit)="editar()">
+  <form [formGroup]="formEdit" (ngSubmit)="editar()">
     <div class="container text-center">
-        
-        <div class="form-floating mb-3">
-            <div>
-              <input
-              type="text"
-              class="form-control" 
-              formControlName="nombre"
-              name="nombre"  
-              id="nombre" 
-              placeholder="">
-            <label for="floatingLabel">Nombre</label>
-            </div>
-            <div>
-              <input
-              type="text"
-              class="form-control" 
-              formControlName="descripcion"
-              name="descripcion"  
-              id="descripcion" 
-              placeholder="">
-            <label for="floatingLabel">Descripcion</label>
-            </div>
-            <div>
-              <input
-              type="number"
-              class="form-control"
-              formControlName="precio" 
-              name="precio"  
-              id="precio" 
-              placeholder="">
-            <label for="floatingLabel">Precio</label>
-            </div>
-            <div>
-              <input
-                type="number"
-                class="form-control"
-                name="stock"
-                formControlName="stock"
-                id="stock"
-                placeholder=""
-              />
-              <label for="floatingLabel">Cantidad</label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Guardar cambios</button>
+      <div class="form-floating mb-3">
+        <div class="m-1">
+          <input
+            type="text"
+            class="form-control"
+            name="nombre"
+            formControlName="nombre"
+            id="nombre"
+            placeholder="NOMBRE"
+          />
+        </div>
+        <div class="m-1">
+          <input
+            type="text"
+            class="form-control"
+            name="descripcion"
+            formControlName="descripcion"
+            id="descripcion"
+            placeholder="DESCRIPCION"
+          />
+        </div>
+        <div class="m-1">
+          <input
+            type="number"
+            class="form-control"
+            name="precio"
+            formControlName="precio"
+            id="precio"
+            placeholder="PRECIO"
+          />
+        </div>
+        <div class="m-1">
+          <input
+            type="number"
+            class="form-control"
+            name="stock"
+            formControlName="stock"
+            id="stock"
+            placeholder="STOCK"
+          />
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="btn btn-primary m-1">
+          Guardar cambios
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-primary m-1" routerLink="/">
+          Cancelar
+        </button>
+      </div>
     </div>
-</form>
+  </form>
 </div>

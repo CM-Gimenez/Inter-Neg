@@ -4,55 +4,55 @@
 <form [formGroup]="formNew" (ngSubmit)="enviardatos()">
   <div class="container text-center">
     <div class="form-floating mb-3">
-      <div>
+      <div class="m-1">
         <input
           type="text"
           class="form-control"
           name="nombre"
           formControlName="nombre"
           id="nombre"
-          placeholder=""
+          placeholder="NOMBRE"
         />
-        <label for="floatingLabel">Nombre</label>
+        
       </div>
-      <div>
+      <div class="m-1">
         <input
           type="text"
           class="form-control"
           name="descripcion"
           formControlName="descripcion"
           id="descripcion"
-          placeholder=""
+          placeholder="DESCRIPCION"
         />
-        <label for="floatingLabel">Descripcion</label>
+        
       </div>
-      <div>
+      <div class="m-1">
         <input
           type="number"
           class="form-control"
           name="precio"
           formControlName="precio"
           id="precio"
-          placeholder=""
+          placeholder="PRECIO"
         />
-        <label for="floatingLabel">Precio</label>
+        
       </div>
-      <div>
+      <div class="m-1">
         <input
           type="number"
           class="form-control"
           name="stock"
           formControlName="stock"
           id="stock"
-          placeholder=""
+          placeholder="STOCK"
         />
-        <label for="floatingLabel">Cantidad </label>
+        
       </div>
     </div>
     <button type="submit" class="btn btn-primary">
       Agregar nuevo producto
     </button>
-    <button class="btn btn-primary m-2" routerLink="/inicio">
+    <button class="btn btn-primary m-2" routerLink="/">
       Cancelar
     </button>
   </div>

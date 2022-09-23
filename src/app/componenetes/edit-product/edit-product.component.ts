@@ -19,19 +19,21 @@ export class EditProductComponent implements OnInit {
     private route: Router
   ) {
     this.idRecibido = this.routeActivated.snapshot.paramMap.get('id');
-    console.log(this.idRecibido);
+    console.log(this.idRecibido + " este es el id");
     this.service.ObtenerProducto(this.idRecibido).subscribe((res) => {
       console.log(res);
       this.formEdit.setValue({
-        nombre:res[0]['nombre'],
-        descripcion:res[0]['descripcion'],
-        precio:res[0]['precio'],
+        nombre:res.data.nombre,
+        descripcion:res.data.descripcion,
+        precio:res.data.precio,
+        stock:res.data.stock,
       });
     });
     this.formEdit = this.formulario.group({
       nombre: [''],
       descripcion: [''],
       precio: [''],
+      stock:['']
     });
   }
 
