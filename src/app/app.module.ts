@@ -22,6 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProductComponent } from './componenetes/edit-product/edit-product.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

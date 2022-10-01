@@ -4,25 +4,32 @@ import { EditProductComponent } from './componenetes/edit-product/edit-product.c
 import { InicioComponent } from './componenetes/inicio/inicio.component';
 import { LoginComponent } from './componenetes/login/login.component';
 import { NewProductComponent } from './componenetes/new-product/new-product.component';
+import { ProductoListComponent } from './componenetes/producto-list/producto-list.component';
 
 //rutas
 const routes: Routes = [
   {
-    path: `login`,
+    path: ``,
     component: LoginComponent,
   },
   {
-    path: ``,
+    path: `home`,
     component: InicioComponent,
+    children: [
+      {
+        path: ``,
+        component: ProductoListComponent,
+      },
+      {
+        path: `new`,
+        component: NewProductComponent,
+      },
+      {
+        path: `edit/:id`,
+        component: EditProductComponent,
+      },
+    ],
   },
-  {
-    path:`new`,
-    component: NewProductComponent
-  },
-  {
-    path:`edit/:id`,
-    component: EditProductComponent
-  }
 ];
 
 @NgModule({

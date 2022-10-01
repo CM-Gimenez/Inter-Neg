@@ -20,7 +20,7 @@ export class CrudService {
   }
 
   BorrarProducto(id:any): Observable<any> {
-    return this.httpclient.get(this.API + '/productos/{id}'+id);
+    return this.httpclient.delete(this.API + '/productos/'+id);
   }
 
   ObtenerProducto(id:any): Observable<any> {
@@ -30,4 +30,5 @@ export class CrudService {
   EditarProducto(id:any, datosProductos:any): Observable<any> {
     return this.httpclient.post(this.API +'/productos/'+id, datosProductos);
   }
+  
 }

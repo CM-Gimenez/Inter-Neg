@@ -44,7 +44,7 @@ export class EditProductComponent implements OnInit {
     this.service
       .EditarProducto(this.idRecibido, this.formEdit.value)
       .subscribe(()=>{
-        this.route.navigateByUrl('/')
+        this.route.navigateByUrl('/home')
       });
   }
 }

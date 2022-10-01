@@ -34,7 +34,7 @@ export class NewProductComponent implements OnInit {
     console.log(this.formNew.value);
     try {
       this.service.AgregarProducto(this.formNew.value).subscribe();
-      this.route.navigateByUrl('')
+      this.route.navigateByUrl('/home')
     } catch (error) {
       console.log(error);
     }
