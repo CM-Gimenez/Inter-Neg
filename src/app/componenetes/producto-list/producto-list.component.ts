@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CrudService } from 'src/app/services/crud.service';
 
 @Component({
@@ -6,14 +6,32 @@ import { CrudService } from 'src/app/services/crud.service';
   templateUrl: './producto-list.component.html',
   styleUrls: ['./producto-list.component.scss'],
 })
-export class ProductoListComponent implements OnInit {
+export class ProductoListComponent implements OnInit, OnChanges {
   productos:any;
 
   constructor(private service: CrudService) {}
+  
 
-  ngOnInit(){
-   this.gettAll();
+
+  loaded = true;
+  loading = false;
+
+  async ngOnInit(){
+    try {
+      this.gettAll();
+    } catch (error) {
+      console.log(error);
+      
+    }
+   
   }
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes);
+    
+    this.gettAll;
+  }
+
   gettAll(){
     this.service.ObtenerProductos().subscribe((res:any)=>{
       console.log(res)
